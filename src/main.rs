@@ -1,4 +1,5 @@
 // Here's the basic way this works: Using TryFrom
+// Based on: https://doc.rust-lang.org/std/convert/trait.TryFrom.html#generic-implementations
 #[derive(Debug)]
 struct GreaterThanZero(i32);
 
@@ -15,7 +16,7 @@ impl TryFrom<i32> for GreaterThanZero {
 }
 
 // And here's the fancier way, using the proc_macro2 crate
-// use proc_macro2::TokenStream;
+// Based on https://github.com/dtolnay/syn/blob/master/examples/heapsize/heapsize_derive/src/lib.rs
 use quote::quote;
 
 #[proc_macro_derive(MyDerive)]
